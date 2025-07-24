@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  quotewiz:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: quotewiz-app
+    ports:
+      - "12345:12345"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - quotewiz-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:12345/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.quotewiz.rule=Host(`quotewiz.yourdomain.com`)"
+      - "traefik.http.services.quotewiz.loadbalancer.server.port=12345"
+
+networks:
+  quotewiz-network:
+    driver: bridge
+
+volumes:
+  nginx_logs:
+    driver: local

@@ -136,24 +136,24 @@ export default function ConverterApp() {
     <div className="min-h-screen bg-gradient-subtle p-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="p-3 bg-gradient-primary rounded-xl shadow-glow animate-float">
-              <Sparkles className="w-8 h-8 text-white" />
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="p-3 bg-gradient-blue-deep rounded-xl shadow-blue animate-float">
+                <Sparkles className="w-8 h-8 text-white" />
+              </div>
+              <h1 className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                QuoteWiz Pro
+              </h1>
             </div>
-            <h1 className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              QuoteWiz
-            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Professional text converter with advanced formatting options for developers and data professionals
+            </p>
           </div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Transform your text lists into perfectly formatted, comma-separated values with advanced customization options
-          </p>
-        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Input Section */}
           <div className="lg:col-span-2 space-y-6">
-            <Card className="shadow-primary border-0">
+            <Card className="shadow-blue border-0 border-l-4 border-l-primary">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <FileText className="w-5 h-5" />
@@ -186,7 +186,7 @@ export default function ConverterApp() {
             </Card>
 
             {/* Output Section */}
-            <Card className="shadow-primary border-0">
+            <Card className="shadow-blue border-0 border-l-4 border-l-accent">
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -198,7 +198,7 @@ export default function ConverterApp() {
                       <Copy className="w-4 h-4" />
                       Copy
                     </Button>
-                    <Button onClick={downloadAsFile} size="sm" variant="gradient" disabled={!output}>
+                    <Button onClick={downloadAsFile} size="sm" variant="professional" disabled={!output}>
                       <Download className="w-4 h-4" />
                       Download
                     </Button>
@@ -218,7 +218,7 @@ export default function ConverterApp() {
 
           {/* Options Panel */}
           <div className="space-y-6">
-            <Card className="shadow-primary border-0">
+            <Card className="shadow-blue border-0 border-l-4 border-l-primary">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Settings className="w-5 h-5" />
@@ -329,7 +329,7 @@ export default function ConverterApp() {
 
             {/* Statistics Card */}
             {input && (
-              <Card className="shadow-primary border-0">
+              <Card className="shadow-blue border-0">
                 <CardHeader>
                   <CardTitle className="text-lg">Statistics</CardTitle>
                 </CardHeader>
