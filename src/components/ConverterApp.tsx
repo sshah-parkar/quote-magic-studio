@@ -38,7 +38,7 @@ export default function ConverterApp() {
   const [customSeparator, setCustomSeparator] = useState('');
   const [trimWhitespace, setTrimWhitespace] = useState(true);
   const [removeEmpty, setRemoveEmpty] = useState(true);
-  const [addSpaceAfterSeparator, setAddSpaceAfterSeparator] = useState(true);
+  const [addSpaceAfterSeparator, setAddSpaceAfterSeparator] = useState(false);
   const { toast } = useToast();
 
   const getSeparator = () => {
